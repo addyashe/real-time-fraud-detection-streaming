@@ -1,0 +1,66 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: fraud-detection-spark-job
+  namespace: default
+spec:
+  backoffLimit: 3
+  template:
+    spec:
+      serviceAccountName: spark
+      containers:
+      - name: spark-driver
+        image: apache/spark:latest
+        imagePullPolicy: IfNotPresent
+        command:
+        - spark-submit
+        - --master
+        - k8s://https://kubernetes.default.svc.cluster.local:443
+        - --deploy-mode
+        - cluster
+        - --name
+        - fraud-detection
+        - --class
+        - org.apache.spark.deploy.PythonRunner
+        - --packages
+        - org.apache.spark:spark-sql-kafka-0-10_2.12:3.3.2
+        - --executor-cores
+        - "4"
+        - --executor-memory
+        - 4g
+        - --num-executors
+        - "3"
+        - --driver-memory
+        - 2g
+        - s3a://my-bucket/src/streaming_app.py
+        - --bootstrap-server
+        - kafka-broker:9092
+        - --input-topic
+        - transactions
+        - --alert-topic
+        - alerts
+        - --checkpoint-dir
+        - s3a://my-bucket/checkpoints
+        env:
+        - name: AWS_ACCESS_KEY_ID
+          valueFrom:
+            secretKeyRef:
+              name: aws-creds
+              key: access-key
+        - name: AWS_SECRET_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: aws-creds
+              key: secret-key
+        - name: SPARK_LOCAL_HOSTNAME
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        resources:
+          requests:
+            memory: "2Gi"
+            cpu: "1"
+          limits:
+            memory: "4Gi"
+            cpu: "2"
+      restartPolicy: OnFailure
