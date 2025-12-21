@@ -384,14 +384,6 @@ Contributions welcome! Please:
 
 MIT License — see [LICENSE](LICENSE) for details.
 
-## Author
+## Contributing
 
-**Mark Fahad** — Staff Data Engineer | Data Architect | MLOps & Real-Time Systems
-
-- Email: mr.marksmith4@gmail.com
-- LinkedIn: [Mark Fahad](https://linkedin.com/in/mark-fahad)
-- GitHub: [@techdevworks](https://github.com/techdevworks)
-
----
-
-**Last updated**: Dec 2025
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.

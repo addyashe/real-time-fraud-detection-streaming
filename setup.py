@@ -6,8 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 setup(
     name="real-time-fraud-detection",
     version="1.0.0",
-    author="Mark Fahad",
-    author_email="mr.marksmith4@gmail.com",
+    author="techdevworks",
     description="Production-grade real-time fraud detection using Kafka & Spark",
     long_description=long_description,
     long_description_content_type="text/markdown",

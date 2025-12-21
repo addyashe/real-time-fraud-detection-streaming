@@ -1,8 +1,7 @@
 """Real-time fraud detection streaming engine."""
 
 __version__ = '1.0.0'
-__author__ = 'Mark Fahad'
-__email__ = 'mr.marksmith4@gmail.com'
+__author__ = 'techdevworks'
 
 from .detector import FraudDetector, is_suspicious, get_risk_score
 
