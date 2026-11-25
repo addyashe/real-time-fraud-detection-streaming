@@ -1,6 +1,6 @@
 # Real-Time Fraud Detection with Kafka & Spark Streaming
 
-[![CI](https://github.com/techdevworks/real-time-fraud-detection-streaming/actions/workflows/ci.yml/badge.svg)](https://github.com/techdevworks/real-time-fraud-detection-streaming/actions)
+[![CI](https://github.com/addyashe/real-time-fraud-detection-streaming/actions/workflows/ci.yml/badge.svg)](https://github.com/addyashe/real-time-fraud-detection-streaming/actions)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
@@ -346,7 +346,7 @@ See [docs/deployment.md](docs/deployment.md) for detailed instructions.
 Push code to a Databricks workspace and schedule the notebook as a Databricks Job.
 
 ```bash
-databricks workspace import src/streaming_app.py /Users/mark.fahad@company.com/fraud-detection
+databricks workspace import src/streaming_app.py /Users/addy.engineer1@gmail.com/fraud-detection
 databricks jobs create --json-file jobs-config.json
 ```
 

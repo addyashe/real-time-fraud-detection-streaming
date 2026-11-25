@@ -78,7 +78,7 @@ if [ "$INSTALL_GH" = true ]; then
     echo
     
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-        read -p "Enter the repository URL (e.g., https://github.com/techdevworks/real-time-fraud-detection-streaming): " REPO_URL
+        read -p "Enter the repository URL (e.g., https://github.com/addyashe/real-time-fraud-detection-streaming): " REPO_URL
         git remote add origin "$REPO_URL"
     else
         echo "Creating GitHub repository..."

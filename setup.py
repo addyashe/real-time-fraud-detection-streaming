@@ -6,11 +6,11 @@ with open("README.md", "r", encoding="utf-8") as fh:
 setup(
     name="real-time-fraud-detection",
     version="1.0.0",
-    author="techdevworks",
+    author="addyashe",
     description="Production-grade real-time fraud detection using Kafka & Spark",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/techdevworks/real-time-fraud-detection-streaming",
+    url="https://github.com/addyashe/real-time-fraud-detection-streaming",
     packages=find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
